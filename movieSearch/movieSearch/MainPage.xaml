@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="movieSearch.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:movieSearch"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="background" Background="#66CCFF">
+        <AutoSuggestBox Name="Search" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" Width="380" PlaceholderText="请输入搜索影片信息" />
+        <ListView x:Name="listview">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid><Grid.RowDefinitions>
+                        <RowDefinition Height="2*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="25"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding moviename}" Foreground="Azure" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap"></TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding day}" Foreground="Azure" HorizontalAlignment="Right" VerticalAlignment="Center" TextWrapping="Wrap"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
+
+</Page>
